@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "course": "SYNTH101",
+  "scope": "Week 3",
+  "basis": "The authored synthetic outline maps Week 3 to both synthetic lectures.",
+  "verified": true,
+  "missing": [],
+  "recordings": {
+    "lecture-1/lecture.vtt": {
+      "verified": true,
+      "basis": "Synthetic fixture authored with its companion slides; English text is the full fixture.",
+      "language": "English"
+    },
+    "lecture-2/lecture.vtt": {
+      "verified": true,
+      "basis": "Synthetic fixture authored with its companion slides; English text is the full fixture.",
+      "language": "English"
+    }
+  },
+  "roles": {
+    "outline.md": "outline"
+  }
+}

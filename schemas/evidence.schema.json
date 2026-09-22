@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["id", "category", "claim", "source_ids", "cue_ids", "slide_refs", "confidence", "uncertainty"],
+  "properties": {
+    "id": {"type": "string"},
+    "category": {"enum": ["A", "B", "C", "D", "E"]},
+    "claim": {"type": "string"},
+    "source_ids": {"type": "array", "items": {"type": "string"}},
+    "cue_ids": {"type": "array", "items": {"type": "string"}},
+    "start_ms": {"type": ["integer", "null"]},
+    "end_ms": {"type": ["integer", "null"]},
+    "slide_refs": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "uncertainty": {"type": "string"}
+  }
+}

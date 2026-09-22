@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blackboard-lecture-companion"
+version = "0.2.0"
+description = "Offline-first tools for traceable Blackboard lecture study materials"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "BoxuanL1"}]
+license = "MIT"
+keywords = ["blackboard", "codex", "education", "kaltura", "plugin"]
+dependencies = ["jsonschema>=4.23,<5"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3.11",
+]
+
+[project.urls]
+Homepage = "https://github.com/BoxuanL1/Bbuddy"
+Repository = "https://github.com/BoxuanL1/Bbuddy"
+Issues = "https://github.com/BoxuanL1/Bbuddy/issues"
+
+[project.optional-dependencies]
+browser = ["playwright>=1.51,<2"]
+documents = ["pypdf>=5,<7", "python-pptx>=1.0.2,<2"]
+test = ["pytest>=8", "PyYAML>=6,<7", "build>=1.2,<2"]
+
+[project.scripts]
+bbcompanion = "blackboard_companion.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+blackboard_companion = ["schemas/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

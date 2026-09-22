@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "bbuddy",
+  "version": "0.2.0",
+  "description": "Create source-backed learning tutorials from authorized Blackboard course materials.",
+  "author": {
+    "name": "BoxuanL1",
+    "url": "https://github.com/BoxuanL1"
+  },
+  "homepage": "https://github.com/BoxuanL1/Bbuddy",
+  "repository": "https://github.com/BoxuanL1/Bbuddy",
+  "license": "MIT",
+  "keywords": [
+    "blackboard",
+    "education",
+    "learning",
+    "captions"
+  ]
+}

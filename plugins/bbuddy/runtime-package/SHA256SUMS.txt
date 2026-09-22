@@ -1,0 +1,1 @@
+04a38e605fccbefd022adf8058724b4fc92a2e353a6d99f03ca089dc416729c1  blackboard_lecture_companion-0.2.0-py3-none-any.whl

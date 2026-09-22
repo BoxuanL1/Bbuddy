@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+Today we study gradient descent. For a differentiable objective, the gradient points toward the steepest local increase. We move in the negative gradient direction.
+
+00:00:05.000 --> 00:00:10.000
+The update is x next equals x minus alpha times the gradient. Alpha is the step size. A large step can overshoot, while a small step may converge slowly.
+
+00:00:10.000 --> 00:00:15.000
+For f of x equals one half x squared, the gradient is x. Start at x equals four and use alpha equals one half: the iterates are four, two, one, and one half.
+
+00:00:15.000 --> 00:00:20.000
+This week compare two step sizes on the same quadratic and explain the difference. The assignment is due Friday; the calendar date is not stated here.

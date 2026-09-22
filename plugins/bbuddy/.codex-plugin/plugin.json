@@ -1,0 +1,27 @@
+{
+  "name": "bbuddy",
+  "version": "0.2.0",
+  "description": "Create source-backed learning tutorials from authorized Blackboard course materials.",
+  "author": {
+    "name": "BoxuanL1",
+    "url": "https://github.com/BoxuanL1"
+  },
+  "homepage": "https://github.com/BoxuanL1/Bbuddy",
+  "repository": "https://github.com/BoxuanL1/Bbuddy",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "BBuddy",
+    "shortDescription": "Course week to source-backed tutorial",
+    "longDescription": "Acquire authorized captions and slides locally, then use Codex to create and validate a learning tutorial.",
+    "developerName": "BoxuanL1",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Explain what my selected course covered in a teaching week and create a learning tutorial."
+    ]
+  }
+}

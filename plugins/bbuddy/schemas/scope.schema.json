@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "course": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "basis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "missing": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "recordings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "verified": {
+            "type": "boolean"
+          },
+          "basis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "language": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "verified",
+          "basis"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "roles": {
+      "type": "object",
+      "additionalProperties": {
+        "enum": [
+          "announcement",
+          "outline",
+          "schedule",
+          "document",
+          "captions",
+          "text"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "course",
+    "scope",
+    "basis",
+    "verified",
+    "missing",
+    "recordings"
+  ],
+  "additionalProperties": false
+}
