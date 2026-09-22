@@ -1,6 +1,7 @@
 """Fail when a prospective public release contains private runtime material."""
 from __future__ import annotations
 
+import hashlib
 import re
 import sys
 import zipfile
@@ -82,6 +83,15 @@ def audit(root: Path) -> list[str]:
         if path.suffix.lower() == '.whl' and not path.name.startswith('blackboard_lecture_companion-'):
             findings.append(f'third-party-wheel: {relative.as_posix()}')
         if path.suffix.lower() in {'.whl', '.pptx'}:
+            if path.suffix.lower() == '.whl' and path.name.startswith('blackboard_lecture_companion-'):
+                checksum_path = path.parent / 'SHA256SUMS.txt'
+                if not checksum_path.is_file():
+                    findings.append(f'missing-wheel-checksum: {relative.as_posix()}')
+                else:
+                    expected = checksum_path.read_text(encoding='utf-8').split()[0].lower()
+                    actual = hashlib.sha256(path.read_bytes()).hexdigest()
+                    if expected != actual:
+                        findings.append(f'wheel-checksum-mismatch: {relative.as_posix()}')
             findings.extend(scan_archive(path, relative))
             continue
         if relative.as_posix() == 'scripts/audit_public_release.py':
