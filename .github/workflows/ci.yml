@@ -7,6 +7,8 @@ on:
 jobs:
   test-and-package:
     runs-on: windows-latest
+    env:
+      SOURCE_DATE_EPOCH: '946684800'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

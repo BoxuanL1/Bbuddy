@@ -35,6 +35,7 @@ py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m pytest -q
 $env:BBCOMPANION_BROWSER_TESTS = '1'
 .\.venv\Scripts\python.exe -m pytest tests/test_browser_integration.py -q
+$env:SOURCE_DATE_EPOCH = '946684800'
 .\.venv\Scripts\python.exe -m build --wheel
 .\.venv\Scripts\python.exe scripts/build_plugin.py
 .\.venv\Scripts\python.exe scripts/audit_public_release.py .

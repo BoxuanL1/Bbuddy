@@ -10,6 +10,7 @@ Before opening a pull request, run:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
+$env:SOURCE_DATE_EPOCH = '946684800'
 .\.venv\Scripts\python.exe -m build --wheel
 .\.venv\Scripts\python.exe scripts/build_plugin.py
 .\.venv\Scripts\python.exe scripts/audit_public_release.py .

@@ -69,6 +69,7 @@ $env:BBCOMPANION_BROWSER_TESTS = '1'
 Build the distributable plugin after tests pass:
 
 ```powershell
+$env:SOURCE_DATE_EPOCH = '946684800'
 .\.venv\Scripts\python.exe -m build --wheel
 .\.venv\Scripts\python.exe scripts/build_plugin.py
 .\.venv\Scripts\python.exe scripts/audit_public_release.py .
